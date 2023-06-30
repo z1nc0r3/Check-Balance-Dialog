@@ -23,8 +23,7 @@ response = requests.post(balance_url, cookies=stored_cookie, headers={"Msisdn": 
 
 if response.status_code == 200:
     balance_data = response.json()
-    # print("Your remaining data balance is:", balance_data["data"]["usage_types"][0]["usages"][0]["remaining_amount"])
-    print("Your remaining data balance is:", balance_data["data"])
+    print("Your remaining data balance is:", balance_data["data"]["usage_types"][0]["usages"][0]["remaining_amount"])
 else:
     driver = webdriver.Chrome()
     homepage_url = "https://dlg.dialog.lk/sso-login?language=en&destination=L215ZGlhbG9nLXdlYj9sYW5ndWFnZT1lbg=="
